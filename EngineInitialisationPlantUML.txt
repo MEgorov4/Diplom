@@ -1,0 +1,17 @@
+participant main.cpp
+participant Engine
+participant EngineContext
+participant CoreModules
+
+
+main.cpp -> Engine: engine_run()
+Engine -> EngineContext: engine_context_construct (Editor/Game) 
+
+
+Engine->EngineContext:minor_initialisation()
+
+Engine -> CoreModules:core_module_startup()
+
+Engine -> EngineContext:major_initialisation()
+
+Engine -> Engine: game_loop_start()
